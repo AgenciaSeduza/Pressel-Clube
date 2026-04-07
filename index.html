@@ -41,10 +41,15 @@
         margin: 10px 0;
     }
 
-    .counter {
+    .live {
         font-size: 14px;
         color: #ccc;
         margin-bottom: 15px;
+    }
+
+    .live span {
+        color: #ff3b5c;
+        font-weight: bold;
     }
 
     .cta-text {
@@ -63,16 +68,16 @@
 
     .btn {
         display: block;
-        width: 100%;
-        padding: 15px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 14px;
         background: linear-gradient(45deg, #cc0029, #ff1a3c);
         color: white;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: bold;
         text-decoration: none;
         border-radius: 30px;
         transition: 0.3s;
-        margin-top: 10px;
     }
 
     .btn:hover {
@@ -92,12 +97,13 @@
 
 <div class="container">
 
-    <!-- SEU BANNER -->
     <img src="SEU-BANNER-AQUI.jpg" class="banner">
 
     <div class="title">CONTEÚDO EXCLUSIVO 🔥</div>
 
-    <div class="counter">+1.093 membros ativos</div>
+    <div class="live">
+        <span id="people">37</span> pessoas entrando agora...
+    </div>
 
     <div class="cta-text">ÚLTIMAS VAGAS DO DIA</div>
 
@@ -108,6 +114,20 @@
     <div class="footer">Conteúdo para maiores de 18 anos</div>
 
 </div>
+
+<script>
+    let people = 37;
+
+    setInterval(() => {
+        let change = Math.floor(Math.random() * 5) - 2; // varia -2 a +2
+        people += change;
+
+        if (people < 25) people = 25;
+        if (people > 68) people = 68;
+
+        document.getElementById("people").innerText = people;
+    }, 2000);
+</script>
 
 </body>
 </html>
